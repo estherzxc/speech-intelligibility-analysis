@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project analyzed speech intelligibility outcomes in children with repaired cleft lip and palate and comparison groups. Speech intelligibility was measured using a 154 single-word intelligibility test, where adult listeners transcribed children’s recorded speech.
+This project examined speech intelligibility among children with repaired cleft lip and palate and comparison groups. The goal was to determine whether children with repaired cleft lip and palate had lower overall intelligibility or different patterns of phonetic errors.
 
-The study included four groups of children: repaired cleft lip and palate (CLP), repaired cleft palate only (CP), typically developing children (TD), and children with a history of otitis media (OM).
+Speech intelligibility was evaluated using recordings from a 154-word test covering 11 phonetic contrast categories. Adult listeners transcribed the recorded words, allowing intelligibility to be measured as the percentage of words correctly understood.
 
 ## Research Questions
 
@@ -13,13 +13,16 @@ The study included four groups of children: repaired cleft lip and palate (CLP),
 
 ## Data
 
-The dataset included 115 children:
-- CLP: 23
-- CP: 24
-- TD: 34
-- OM: 34
+The analytical dataset included 115 children across four study groups:
 
-Each child’s speech was evaluated by three adult listeners. The primary outcome was mean single-word intelligibility score, averaged across listeners. The original dataset is not included in this repository because it is not publicly shareable.
+- Repaired cleft lip and palate (CLP): 23
+- Repaired cleft palate only (CP): 24
+- Typically developing (TD): 34
+- History of otitis media (OM): 34
+
+Each child's speech was independently evaluated by three adult listeners. The primary outcome was the mean percentage of test words correctly transcribed across the three listeners.
+
+The original dataset is not included because I do not have permission to redistribute it publicly. No individual-level or confidential data are included in this repository.
 
 ## Methods
 
