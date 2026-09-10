@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\AtBeginEnvironment{table}{\singlespacing}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\setlength{\headheight}{25pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{\footnotesize Group 8}
+\fancyfoot[R]{\footnotesize Esther Zhou, Dan Huang, Wanbing Wang, Sophie Shan}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{}{0em}{}
+\begin{document}
+\doublespacing
+
+% ── Title block ────────────────────────────────────────────────
+\begin{center}
+{\large\textbf{Single-Word Speech Intelligibility for Children
+with Repaired Cleft Lip and Palate}}
+\end{center}
+
+% ── INTRODUCTION ───────────────────────────────────────────────
+\section*{INTRODUCTION}\label{sec:intro}
+\subsection*{Background}
+Speech intelligibility refers to the degree to which a speaker's output can
+be understood by a listener and is considered a key functional outcome in the
+assessment of speech disorders. Children born with cleft lip and/or palate
+(CLP) are at elevated risk of reduced intelligibility due to structural
+differences in the lip, alveolar ridge, or palate that can disrupt airflow,
+articulation, and oral pressure during speech production. Although surgical
+repair is typically performed early in life, many children continue to exhibit
+reduced speech intelligibility following repair, underscoring the need for
+reliable, validated tools to quantify intelligibility deficits and inform
+therapeutic planning. One factor that may further compromise speech production
+in this population is velopharyngeal (VP) inadequacy. Children with CLP or CP
+may exhibit hypernasality due to incomplete velopharyngeal closure, which can
+substantially reduce speech intelligibility.
+
+Zajac et al.\ previously validated a computer-mediated, single-word
+intelligibility test designed as a global measure of speech disability severity
+in children with repaired cleft lip and palate \cite{zajac2011}. Their study
+included 22 children with repaired CLP and 16 controls. Each child was recorded
+completing two unique 50-word intelligibility tests, in which they repeated
+words spoken by a live instructor. Recordings were then transcribed by four
+listener groups of five listeners each. The test was specifically designed to
+include phonemic contrasts known to be challenging for children with cleft
+palate. Reliability was high, with intraclass correlations of approximately
+0.96 across the four listener groups. Children with CLP scored approximately
+20 percentage points lower than controls, supporting the validity of the
+instrument. The current study employed a similar protocol, with the
+modification that children repeated words produced by a computerized voice
+rather than a live instructor.
+
+In this project, we analyzed data from a study of four groups of children:
+repaired cleft lip and palate (CLP), repaired cleft palate only (CP),
+typically developing children (TD), and children with a history of otitis
+media (OM). Children with a history of OM were included as a comparison group
+because recurrent OM during early childhood is associated with transient
+conductive hearing loss, which may affect speech and language development
+during critical periods of acquisition and consequently impact speech
+intelligibility. Speech intelligibility was measured using a 154-word
+single-word test based on 11 phonetic contrasts, in which adult listeners
+orthographically transcribed children's recorded speech.
+
+\subsection*{Study Aims}
+\textbf{Aim 1:} Assess differences in overall speech intelligibility between
+children with CLP and children in the CP, OM, and TD groups.\\[0.5em]
+\textbf{Aim 2:} Evaluate whether patterns of phonetic errors differ between
+children with CLP and children in the CP, OM, and TD groups.
+
+% ── METHODS ────────────────────────────────────────────────────
+\section*{METHODS}\label{sec:methods}
+\subsection*{Study Design and Participants}\label{sec:design}
+This was a single-center, cross-sectional observational study. A total of 115
+children were enrolled across four groups: CLP ($n=23$), CP ($n=24$), TD
+($n=34$), and OM ($n=34$). Seven children with inadequate VP status were
+excluded from all primary and secondary analyses (6 CLP, 1 CP), yielding a
+final analytic sample of $n=108$. The rationale for this exclusion is
+described in the Preliminary Analysis section. All analyses using the full
+$N=115$ sample are presented as sensitivity analyses.
+
+\subsection*{Listener Protocol}\label{sec:listeners}
+Twenty-two groups of three adult listeners (66 total) independently
+orthographically transcribed recorded words using headphones. Each group
+evaluated 5--6 children, with at least two children with clefts per group.
+All listeners passed a pure-tone hearing test and reported English as their
+first language.
+
+\subsection*{Statistical Analysis}\label{sec:stats}
+\subsubsection*{Preliminary Analysis}
+Prior to primary analysis, three preliminary steps were conducted. First,
+inter-rater agreement within each of the 22 listener groups was assessed
+using the intraclass correlation coefficient (ICC; two-way mixed model,
+absolute agreement, single rater) \cite{koo2016}. Second, we tested whether
+the TD and OM groups differed sufficiently to preclude pooling. Normality was
+assessed via the Shapiro-Wilk test; given non-normality, a bootstrapped
+equivalence test (TOST) was conducted with an equivalence margin of $\pm5$
+points. The two groups were merged into a single Control group if the observed
+difference was considered clinically negligible. Third, we examined the
+influence of children with inadequate VP status by computing mean speech
+intelligibility scores stratified by VP status, cohort, and sex.
+
+\subsubsection*{Primary Analysis (Aim 1)}
+A linear mixed model (LMM) was fit using individual listener intelligibility
+scores as the outcome. Fixed effects included cohort, age, and sex.
+Based on the preliminary analysis, VP status was included as a covariate
+only if children with inadequate VP status were retained. To assess whether pairwise interaction terms
+improved model fit, a likelihood ratio test-based forward selection procedure
+was conducted, in which each two-way interaction term (cohort $\times$ age,
+cohort $\times$ sex, and age $\times$ sex) was evaluated individually against
+the main-effects-only model and retained if significant at $\alpha = 0.05$.
+A random intercept for child (ID) was included to account for the three repeated listener scores per child, and variance components were estimated using REML. Two planned pairwise contrasts (Control vs.\ CLP; CP vs.\ CLP)
+were adjusted for multiplicity using the Hochberg procedure at $\alpha = 0.05$
+\cite{hochberg1988}.
+
+\subsubsection*{Secondary Analysis (Aim 2)}
+For each of the 11 phonetic contrast scores, a separate OLS linear
+regression was fit using the same fixed effects selected in the primary
+analysis, using the same analytic sample ($n = 108$). Planned pairwise
+contrasts (Control vs.\ CLP; CP vs.\ CLP) were extracted and a gatekeeping
+procedure \cite{bretz2009} was applied across two families of hypotheses:
+Family 1 tested CLP vs.\ Control across all 11 contrasts, and Family 2 tested
+CLP vs.\ CP only for those contrasts where Family 1 was rejected. Both
+families used the Hochberg adjustment at $\alpha = 0.05$ \cite{hochberg1988}.
+
+\subsubsection*{Sensitivity Analyses}
+Three sensitivity analyses were conducted: (1) the primary LMM was refit
+including the 7 excluded children with inadequate VP status, with VP status
+added as a main-effect covariate; (2) an OLS regression of the child-level mean intelligibility score on the same fixed effects as the primary model was fit using the $n = 108$ analytic sample, with listener group included as a fixed effect if the overall $F$-test indicated a significant listener group effect ($\alpha = 0.05$); and (3) the OLS regression was repeated including all $N = 115$
+children, with VP status added as a covariate.
+
+% ── RESULTS ────────────────────────────────────────────────────
+\section*{RESULTS}\label{sec:results}
+
+\subsection*{Preliminary Analysis}\label{sec:res-prelim}
+\subsubsection*{Inter-Rater Agreement}
+We found that Listener Groups 2, 3, and 7 had poor agreement ($ICC < 0.5$).
+
+\subsubsection*{TD vs.\ OM Comparability}
+Shapiro-Wilk testing indicated non-normality in both groups ($p = .017$ and
+$p = .002$, respectively). The bootstrapped TOST yielded an observed mean
+difference of 3.08 points (90\% bootstrapped CI: 0.87, 5.68); although the
+lower equivalence bound was satisfied ($p < .001$), the upper bound was not
+($p = .101$), meaning formal statistical equivalence could not be confirmed.
+Nevertheless, as the observed difference represents approximately 3\% of the
+full scale range, it was considered clinically negligible and the two groups
+were combined into a single Control group for all subsequent analyses.
+
+\subsubsection*{Examining the Influence of Inadequate VP Status}
+
+As shown in Supplementary Figure~\ref{fig:boxplot_vp}, children with
+inadequate VP status had substantially lower mean SWI scores than those with
+adequate VP. Table~\ref{tab:vp-descriptive} showed this subgroup was
+almost entirely concentrated within the CLP group, creating a near-complete
+confounding between VP status and CLP group membership. The consequences of
+this are visible in Supplementary Figure~\ref{fig:boxplot} and Table~\ref{tab:vp-descriptive}: female mean SWI
+scores were higher than male scores across all cohorts except CLP; a reversal explained by the three CLP females with inadequate VP
+status, who had a mean SWI of 51.5 (SD = 7.5), compared to 87.4 (SD = 1.6)
+among adequate VP CLP females. Because VP dysfunction is a physiological
+consequence of cleft palate rather than an independent confounder, children
+with inadequate VP status were therefore excluded from all primary and
+secondary analyses (final analytic sample: $n = 108$), with results including
+these children presented as sensitivity analyses.
+
+\begin{table}[H]
+\centering
+\caption{Mean speech intelligibility score by VP status, cohort, and sex.}
+\label{tab:vp-descriptive}
+\begin{threeparttable}
+\begin{tabular}{llcrrr}
+\toprule
+\textbf{VP Status} & \textbf{Cohort} & \textbf{Sex} & \textbf{Mean SWI} & \textbf{SD} & \textbf{n} \\
+\midrule
+\multirow{6}{*}{Adequate}
+  & \multirow{2}{*}{CLP}     & Male   & 86.0 & 7.12  & 14 \\[0.3em]
+  &                          & Female & 87.4 & 1.56  &  3 \\[0.6em]
+  & \multirow{2}{*}{CP}      & Male   & 85.1 & 9.87  & 11 \\[0.3em]
+  &                          & Female & 89.8 & 3.18  & 12 \\[0.6em]
+  & \multirow{2}{*}{Control} & Male   & 90.0 & 6.08  & 39 \\[0.3em]
+  &                          & Female & 90.5 & 6.25  & 29 \\
+\midrule
+\multirow{3}{*}{Inadequate}
+  & \multirow{2}{*}{CLP}     & Male   & 82.1 & 16.60 &  3 \\[0.3em]
+  &                          & Female & \textbf{51.5} & \textbf{7.47} & \textbf{3} \\[0.6em]
+  & CP                       & Male   & 88.1 & ---   &  1 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Note:} CLP = cleft lip and palate; CP = cleft palate only.
+The three CLP females with inadequate VP status (mean SWI = 51.5) are bolded
+to highlight their disproportionate influence on group estimates. SD not
+reported for CP inadequate males due to $n = 1$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection*{Primary Analysis}\label{sec:res-primary}
+Baseline characteristics were broadly similar across the three groups with
+respect to age, although the proportion of males differed across cohorts
+(Table~\ref{tab:baseline}). Mean speech intelligibility was lowest in the CLP
+group (mean SWI = 86.2, SD = 6.47), followed by the CP group (mean SWI =
+87.6, SD = 7.43) and the Control group (mean SWI = 90.2, SD = 6.11). A
+positive association between age and intelligibility was visible across all
+groups (Supplementary Figure~\ref{fig:scatter}).
+
+\begin{table}[H]
+\centering
+\caption{Baseline characteristics and mean speech intelligibility by group.}
+\label{tab:baseline}
+\begin{tabular}{lccc}
+\toprule
+& \textbf{CLP} & \textbf{CP} & \textbf{Control} \\
+& ($n=17$) & ($n=23$) & ($n=68$) \\
+\midrule
+Age, mean (SD)      & 7.64 (1.13) & 7.65 (0.925) & 7.57 (0.924) \\[0.5em]
+Sex, Male $n$ (\%)  & 14 (82.4\%) & 11 (47.8\%)  & 39 (57.4\%)  \\[0.5em]
+M\_SWI, mean (SD)   & 86.2 (6.47) & 87.6 (7.43)  & 90.2 (6.11)  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the LMM, no interaction terms were retained (Table~\ref{tab:primary}).
+Neither planned pairwise contrast reached statistical significance after
+Hochberg adjustment: the Control vs.\ CLP difference was 3.80 points
+(95\% CI: $-$0.07, 7.67; adjusted $p = 0.056$) and the CP vs.\ CLP
+difference was 0.88 points (95\% CI: $-$3.71, 5.47; adjusted $p = 0.664$).
+Older age was positively associated with intelligibility ($p = 0.001$).
+
+\begin{table}[H]
+\centering
+\caption{Adjusted pairwise contrasts with CLP from the primary LMM.}
+\label{tab:primary}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Contrast} & \textbf{Estimate} & \textbf{95\% CI} & \textbf{Adjusted $p$-value} \\
+\midrule
+Control vs.\ CLP & 3.80 & ($-$0.07, 7.67) & 0.056 \\[0.5em]
+CP vs.\ CLP      & 0.88 & ($-$3.71, 5.47) & 0.664 \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Estimates are adjusted mean differences in SWI points from the LMM.} \\
+\multicolumn{4}{l}{\footnotesize Model adjusted for age and sex.} \\
+\multicolumn{4}{l}{\footnotesize $p$-values adjusted using the Hochberg procedure for 2 tests.} \\
+\end{tabular}
+\end{table}
+
+\subsubsection*{Sensitivity Analysis}
+Table~\ref{tab:contrasts_combined} compares pairwise contrasts across all
+four models. The Control vs.\ CLP and CP vs.\ CLP estimates were consistent
+in direction and magnitude between the primary LMM and the OLS model using
+child-level mean SWI, suggesting
+that the results are robust to the choice of modeling approach. The agreement
+between these two models is reassuring: while the LMM appropriately accounts
+for the correlation between the three listener scores per child through the
+random intercept, the similarity of estimates indicates that the conclusions
+do not depend on this modeling choice. Models including children with
+inadequate VP status yielded somewhat larger estimates for both contrasts
+(Control vs.\ CLP: 5.20 points; CP vs.\ CLP: 3.12 points), reflecting the
+influence of the excluded children on group-level estimates.
+
+\begin{table}[H]
+\centering
+\caption{Pairwise contrasts with CLP across primary and sensitivity analyses.}
+\label{tab:contrasts_combined}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+& \textbf{Primary LMM} & \textbf{LM: Mean SWI} & \textbf{LMM + VP Status} & \textbf{LM + VP Status} \\
+\textbf{Contrast} & \textbf{Estimate} & \textbf{Estimate} & \textbf{Estimate} & \textbf{Estimate} \\
+\midrule
+Control vs.\ CLP & 3.80 & 3.80 & 5.20 & 5.20 \\[0.3em]
+CP vs.\ CLP      & 0.88 & 0.88 & 3.12 & 3.12 \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Primary LMM and LM: Mean SWI use the analytic sample ($n = 108$, adequate VP only).} \\
+\multicolumn{5}{l}{\footnotesize LMM + VP Status and LM + VP Status include all children ($N = 115$) with VP status as a covariate.} \\
+\end{tabular}%
+}
+\end{table}
+
+\subsection*{Secondary Analysis}\label{sec:res-secondary}
+No phonetic contrast showed a statistically significant difference between
+CLP and Control after Hochberg adjustment (all adjusted $p \geq 0.066$),
+and Family 2 testing was therefore not conducted for any contrast. The
+largest estimated differences were for alveolar-palatal sibilant (8.3 points,
+95\% CI: 2.1, 14.5), liquid-glide (7.0 points, 95\% CI: $-$2.1, 16.2),
+and fricative-affricate (5.0 points, 95\% CI: $-$1.3, 11.4).
+
+% ── DISCUSSION ─────────────────────────────────────────────────
+\section*{DISCUSSION}\label{sec:discussion}
+\subsection*{Summary of Findings}
+This study examined the effects of cohort membership, age, and sex on
+single-word speech intelligibility in children with repaired cleft palate.
+In the primary analysis, neither planned
+pairwise contrast reached statistical significance after Hochberg adjustment:
+the Control vs.\ CLP difference was 3.80 points (adjusted $p = 0.056$) and
+the CP vs.\ CLP difference was 0.88 points (adjusted $p = 0.664$). Older age
+was positively associated with intelligibility ($p = 0.001$). In the secondary
+analysis, no phonetic contrast showed a significant difference between CLP and
+Control after Hochberg adjustment (all adjusted $p \geq 0.066$), and Family 2
+testing was therefore not conducted.
+
+\subsection*{Limitations}
+Several limitations should be noted. First, all participants were recruited
+from a single clinical site, which may limit the generalizability of findings.
+Second, the cross-sectional design of this study limits causal inference.
+Third, the TD and OM groups were combined into a single Control group based on
+a clinically negligible observed difference of 3.08 points; however, formal
+statistical equivalence within the prespecified $\pm$5 point margin could not
+be confirmed. Future studies with larger samples may be better powered to
+formally establish the comparability of these groups.
+
+In Aim 1, listener group was assessed as a potential random effect but its variance collapsed to zero once a child-level random intercept was included, and it was therefore dropped from the final model. The child-level random intercept was retained to account for the correlation between the three listener scores per child. Listener group assignment was imputed for participant 30310 by cross-referencing listener IDs against the group roster, and responses from Listener 74 for this participant were discarded prior to data receipt due to an audio playback error. Residual plots showed some departure from normality in the lower tail, likely attributable to a small number of participants with low intelligibility scores. Given the robustness of linear mixed models to moderate departures from normality, this was not expected to substantially affect inference.
+
+With respect to the secondary analysis, the gatekeeping structure requires a
+contrast to be significant in Family 1 (CLP vs.\ Control) before testing it
+in Family 2 (CLP vs.\ CP), and as a result cannot detect contrasts where CLP
+differs from CP but not from the control.
+
+\subsection*{Conclusions}
+Neither the Control vs.\ CLP nor the CP vs.\ CLP contrast reached statistical
+significance in the primary analysis, though the Control vs.\ CLP difference
+of 3.80 points approached significance (adjusted $p = 0.056$). Older age was
+positively associated with intelligibility across all groups. At the phonetic
+level, there were no statistically significant contrast-specific differences. These findings suggest that children with repaired cleft lip and palate may
+have lower speech intelligibility than both typically developing controls, though larger studies are needed to draw
+definitive conclusions.
+
+% ── REFERENCES ─────────────────────────────────────────────────
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+% ── AI USE DISCLAIMER ──────────────────────────────────────────
+\section*{AI USE DISCLAIMER}\label{sec:ai}
+Portions of this report were drafted with the assistance of Claude (Anthropic),
+a large language model AI assistant. All AI-generated content was reviewed,
+verified, and approved by the study statisticians. The AI was used solely as a
+writing and organizational aid; all statistical decisions, methodology, and
+scientific judgment remain the sole responsibility of the authors.
+
+
+% ── SUPPLEMENTARY FIGURES ──────────────────────────────────────
+\newpage
+\section*{SUPPLEMENTARY FIGURES}\label{sec:supplement}
+\setcounter{figure}{0}
+\renewcommand{\figurename}{Supplementary Figure}
+
+% ── SUPPL. FIGURE 1 ────────────────────────────────────────────
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.6\textwidth]{Figure1_4cohorts.pdf}
+    \caption{Distribution of mean speech intelligibility scores by group and sex.}
+    \label{fig:boxplot}
+    \vspace{0.3em}
+    {\footnotesize Boxes show median and IQR; whiskers extend to 1.5$\times$IQR.}
+\end{figure}
+
+% ── SUPPL. FIGURE 2 ────────────────────────────────────────────
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figure2_Scatter.pdf}
+    \caption{Mean SWI versus age by cohort.}
+    \label{fig:scatter}
+    \vspace{0.3em}
+    {\footnotesize Points represent individual children, colored by group.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{M_SWI_VP.png}
+    \caption{Mean SWI by VP status.}
+    \label{fig:boxplot_vp}
+    \vspace{0.3em}
+    {\footnotesize Boxes represent IQR with median indicated; whiskers extend to 1.5$\times$IQR.}
+\end{subfigure}
+\caption{Relationships between mean SWI and age (left) and VP status (right).}
+\label{fig:combined}
+\end{figure}
+
+\end{document}

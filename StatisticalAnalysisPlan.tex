@@ -1,0 +1,305 @@
+\documentclass{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\setlength{\headheight}{25pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% ── Header block ───────────────────────────────────────────────
+\noindent\textbf{Full Title:} Single-Word Speech Intelligibility for Children with Repaired Cleft Lip and Palate\\
+\textbf{Abbreviated Title:} Single-Word Speech Intelligibility  \\
+\textbf{Keywords:} Speech intelligibility, cleft lip  \\
+\textbf{Lead/Corresponding Author:} David J. Zajac \\
+\textbf{Manuscript Affiliation:} Department of Craniofacial and Surgical Care \\
+\textbf{Statisticians:} Dan Huang, Sophie Shan, Wanbing Wang, Esther Zhou \\
+
+\vspace{1em}
+
+% ── AI USE DISCLAIMER ──────────────────────────────────────────
+\section*{AI USE DISCLAIMER}\label{sec:ai}
+Portions of this statistical analysis plan were drafted with the assistance 
+of Claude (Anthropic), a large language model AI assistant. All AI-generated 
+content was reviewed, verified, and approved by the study statisticians. The 
+AI was used solely as a writing and organizational aid; all statistical 
+decisions, methodology, and scientific judgment remain the sole responsibility 
+of the authors.
+
+% ── Table of Contents (manual) ─────────────────────────────────
+\section*{Contents}
+\begin{tabular}{@{}p{15.5cm}@{\hfill}r@{}}
+AIMS & \pageref{sec:aims} \\
+STUDY DESIGN SUMMARY & \pageref{sec:summary} \\
+KEY REFERENCES & \pageref{sec:refs} \\
+TABLES AND FIGURES SUMMARY & \pageref{sec:tables} \\
+ANALYTIC FILE & \pageref{sec:analytic} \\
+\quad Inclusions/Exclusions & \pageref{sec:inclusions} \\
+\quad Definitions: Outcomes, Exposures, Covariates & \pageref{sec:definitions} \\
+PRELIMINARY ANALYSIS & \pageref{sec:prelim} \\
+\quad Key decisions & \pageref{sec:prelim-decisions} \\
+PRIMARY ANALYSIS & \pageref{sec:primary} \\
+\quad Key decisions & \pageref{sec:primary-decisions} \\
+\quad Missing Data & \pageref{sec:missing} \\
+\quad Significance level/Multiple Comparisons & \pageref{sec:significance} \\
+\quad Sensitivity Analysis & \pageref{sec:sensitivity} \\
+SECONDARY ANALYSIS & \pageref{sec:secondary} \\
+\quad Key decisions & \pageref{sec:secondary-decisions} \\
+\quad Significance level/Multiple Comparisons & \pageref{sec:secondary-significance} \\
+\end{tabular}
+
+
+\newpage
+
+% ── AIMS ───────────────────────────────────────────────────────
+\section*{AIMS}\label{sec:aims}
+
+\textbf{Aim 1:} Assess differences in overall speech intelligibility between children with CLP, and children in the CP, OM, and TD groups. \\[0.5em]
+\textbf{Aim 2:} Evaluate whether patterns of phonetic errors differ between children with CLP and children in the CP, OM, and TD groups.
+
+% ── STUDY DESIGN SUMMARY ────────────────────────────────────────
+\section*{STUDY DESIGN SUMMARY}\label{sec:summary}
+
+Single-center, cross-sectional observational study including 115 children from four groups: children with repaired cleft lip and palate (CLP), repaired cleft palate only (CP), a history of otitis media (OM), and typically developing (TD) children. Speech intelligibility was assessed using a 154-word single-word intelligibility test in which adult listeners independently transcribed recorded speech samples. Listeners were organized into groups of three, with each group evaluating recordings from approximately 5–6 children. Phonetic errors were recorded based on listener transcriptions and categorized into 11 predefined phonetic contrasts.
+
+% ── KEY REFERENCES ─────────────────────────────────────────────
+\section*{KEY REFERENCES}\label{sec:refs}
+\setlength{\parindent}{0pt}
+\setlength{\hangindent}{1.5em}
+1.\enspace Zajac DJ, Plante C, Lloyd A, Haley KL. Reliability and validity of a 
+computer-mediated, single-word intelligibility test: preliminary findings for 
+children with repaired cleft lip and palate. \textit{Cleft Palate Craniofac J.} 
+2011;48(5):538--549. doi:10.1597/09-166
+
+\hangindent=1.5em
+2.\enspace Koo TK, Li MY. A guideline of selecting and reporting intraclass 
+correlation coefficients for reliability research. \textit{J Chiropr Med.} 
+2016;15(2):155--163. doi:10.1016/j.jcm.2016.02.012
+
+\hangindent=1.5em
+3.\enspace Bretz F, Maurer W, Brannath W, Posch M. A graphical approach to 
+sequentially rejective multiple test procedures. \textit{Stat Med.} 
+2009;28(4):586--604. doi:10.1002/sim.3495
+
+\hangindent=1.5em
+4.\enspace Benjamini Y, Hochberg Y. Controlling the false discovery rate: a 
+practical and powerful approach to multiple testing. \textit{J R Stat Soc B.} 
+1995;57(1):289--300.
+
+% ── TABLES AND FIGURES SUMMARY ─────────────────────────────────
+\section*{TABLES AND FIGURES SUMMARY}\label{sec:tables}
+
+\subsection*{MANUSCRIPT}
+
+\begin{tabular}{p{2.5cm} p{4cm} p{2.5cm} p{5cm}}
+\toprule
+\textbf{Table/Figure \#} & \textbf{Brief title} & \textbf{JOB} & \textbf{Notes or comments} \\
+\midrule
+Table 1 & Baseline characteristics and mean speech intelligibility by group& Descriptive summary table& Includes N, age (mean ± SD), sex (n, \%), and mean intelligibility score (averaged across L1–L3) by group (CLP, CP, OM, TD); no statistical testing\\[1em]
+Table 2 & Adjusted association between cleft type and speech intelligibility& Inferential analysis& LMM of mean intelligibility on cleft type, adjusted for age and sex; CLP as reference group\\[1em]
+Table 3 & Association Between Group and Contrast-Specific Intelligibility Scores&Assess whether intelligibility differs by groups for each phonetic contrast. &Linear regression adjusted for age and sex; estimates shown with 95\% CI \\[1em]
+Figure 1 & Distribution of Mean Speech Intelligibility Scores by Group and Sex& Compare intelligibility across groups and sex.& Boxplots show median, IQR, and range by group and sex.\\[1em]
+ Figure 2& Mean Speech Intelligibility vs. Age by Group & Assess the relationship between age and intelligibility across groups. &Scatter plot with points colored by group, points represent individuals. Optional trend lines may be added. \\[1em]
+Suppl. Table 1 & Inter-Rater Reliability of Listener Groups (Intraclass Correlation Coefficients)& Assess agreement among listeners.& ICC quantifies inter-rater reliability; higher values indicate stronger agreement.\\[1em]
+Suppl. Table 2 &Sensitivity analyses for cohort effect on mean speech intelligibility & Assess robustness of primary model results& Compares estimates from the primary LMM with sensitivity analyses including simplified random effects, VP exclusion, and OLS model to assess robustness.\\
+\bottomrule
+\end{tabular}
+
+% ── ANALYTIC FILE ──────────────────────────────────────────────
+\section*{ANALYTIC FILE}\label{sec:analytic}
+\subsection*{Inclusions/Exclusions}\label{sec:inclusions}
+Full cohort (N=115) is retained for analysis. No participants are excluded. \\
+
+\noindent \textit{Data note:} Responses from Listener 74 for participant 30310 were discarded 
+prior to data receipt due to audio playback problems with the transcription program. 
+As a result, M\_SWI for participant 30310 reflects the mean of two listeners rather 
+than three. This participant is retained in all analyses.
+
+\subsection*{Definitions: Outcomes, Exposures, Covariates}\label{sec:definitions}
+
+\subsubsection*{OUTCOMES}
+\begin{longtable}{p{2cm} p{2cm} p{5cm} p{5cm}}
+\toprule
+\textbf{Outcome (friendly name)} & \textbf{Values and Format} & \textbf{Definition or variable name in dataset} & \textbf{Notes or QC comments} \\
+\midrule
+\multicolumn{4}{l}{\textit{DERIVED VARIABLES IN THIS MANUSCRIPT}} \\[0.5em]
+M\_SWI & 0--100 (\%); continuous & Mean of L1\_SWI, L2\_SWI, and L3\_SWI; percentage of 154 test words correctly transcribed, averaged across 3 listeners & Main outcome; column M \\[1em]
+alv\_pal & 0--100 (\%); continuous & Mean \% correct for alveolar-palatal sibilant contrast (14 words; e.g., \textit{see--she}), averaged across 3 listeners & Secondary outcome; column R \\[1em]
+alv\_velar & 0--100 (\%); continuous & Mean \% correct for alveolar-velar stop contrast (14 words; e.g., \textit{tap--cap}), averaged across 3 listeners & Secondary outcome; column S \\[1em]
+cl\_sing & 0--100 (\%); continuous & Mean \% correct for cluster-singleton contrast (14 words; e.g., \textit{stop--top}), averaged across 3 listeners & Secondary outcome; column T \\[1em]
+con\_null & 0--100 (\%); continuous & Mean \% correct for initial consonant-null contrast (14 words; e.g., \textit{pat--at}), averaged across 3 listeners & Secondary outcome; column U \\[1em]
+fr\_bk & 0--100 (\%); continuous & Mean \% correct for front-back vowel contrast (14 words; e.g., \textit{fill--full}), averaged across 3 listeners & Secondary outcome; column V \\[1em]
+fric\_affr & 0--100 (\%); continuous & Mean \% correct for fricative-affricate contrast (14 words; e.g., \textit{ship--chip}), averaged across 3 listeners & Secondary outcome; column W \\[1em]
+hi\_lo & 0--100 (\%); continuous & Mean \% correct for high-low vowel contrast (14 words; e.g., \textit{beat--bit}), averaged across 3 listeners & Secondary outcome; column X \\[1em]
+r\_w & 0--100 (\%); continuous & Mean \% correct for liquid-glide contrast (14 words; e.g., \textit{ray--way}), averaged across 3 listeners & Secondary outcome; column Y \\[1em]
+st\_fric-affr & 0--100 (\%); continuous & Mean \% correct for stop-fricative/affricate contrast (14 words; e.g., \textit{base--vase}), averaged across 3 listeners & Secondary outcome; column Z \\[1em]
+st\_nas & 0--100 (\%); continuous & Mean \% correct for stop-nasal contrast (14 words; e.g., \textit{bop--mop}), averaged across 3 listeners & Secondary outcome; column AA \\[1em]
+vd\_vl & 0--100 (\%); continuous & Mean \% correct for voiced-voiceless stop contrast (14 words; e.g., \textit{big--pig}), averaged across 3 listeners & Secondary outcome; column AB \\[1em]
+\midrule
+\midrule
+\multicolumn{4}{l}{\textit{EXISTING DERIVED VARIABLES}} \\[0.5em]
+L1\_SWI & 0--100 (\%); continuous & Percentage of 154 test words correctly 
+transcribed by Listener 1 & Primary 
+analysis; column J \\[1em]
+L2\_SWI & 0--100 (\%); continuous & Percentage of 154 test words correctly 
+transcribed by Listener 2 & Primary 
+analysis; column K \\[1em]
+L3\_SWI & 0--100 (\%); continuous & Percentage of 154 test words correctly 
+transcribed by Listener 3 & Primary 
+analysis; column L. Listener 74's data for participant 
+30310 discarded due to audio playback error; participant 30310 contributes 
+2 listener observations rather than 3 in the LMM. \\[1em]
+\bottomrule
+\end{longtable}
+
+\subsubsection*{EXPOSURES}
+\begin{tabular}{p{2cm} p{2cm} p{5cm} p{5cm}}
+\toprule
+\textbf{Exposure (friendly name)} & \textbf{Values and Format} & \textbf{Definition} & \textbf{Notes or QC comments} \\
+\midrule
+Cohort & 1=CLP, 2=CP, 3=TD, 4=OM; categorical & Child's diagnostic group: 1=repaired cleft lip and palate (CLP), 2=repaired cleft palate only (CP), 3=typically developing (TD), 4=early history of otitis media (OM) & Primary exposure; N=23, 24, 34, 34 respectively; column B \\[1em]
+Cleft Type & 1=none, 2=UCLP, 3=BCLP, 4=soft palate only, 5=soft \& hard palate; categorical & 1=none (TD and OM), 2=unilateral CLP, 3=bilateral CLP, 4=cleft soft palate only, 5=cleft soft and hard palate & CLP cohort = codes 2--3; CP cohort = codes 4--5; column C  \\[1em]
+& & & \\[1em]
+& & & \\
+\bottomrule
+\end{tabular}
+
+\subsubsection*{COVARIATES}
+\begin{tabular}{p{2cm} p{2cm} p{5cm} p{5cm}}
+\toprule
+\textbf{Covariates (friendly name)} & \textbf{Values and Format} & \textbf{Definition} & \textbf{Notes or QC comments} \\
+\midrule
+Sex & 1=M, 2=F; categorical & Biological sex & column D \\[1em]
+Age & Continuous; years & Age in years at time of recording & column E \\[1em]
+VP Status & 1=adequate, 2=inadequate; categorical & 1=$<$5\,mm$^2$ (adequate VP closure), 2=$>$5\,mm$^2$ (inadequate VP closure) & 6 CLP + 1 CP coded as inadequate; all TD and OM coded as adequate; column AC;  \\[1em]
+& & & \\[1em]
+& & & \\
+\bottomrule
+\end{tabular}
+
+\subsubsection*{OTHER VARIABLES}
+\begin{tabular}{p{2cm} p{2cm} p{5cm} p{5cm}}
+\toprule
+\textbf{Variable (friendly name)} & \textbf{Values and Format} & \textbf{Definition} & \textbf{Notes or QC comments} \\
+\midrule
+ID & Integer; categorical & Unique child identifier; first two digits denote recruitment site & 3 recruitment sites; column A\\[1em]
+L1, L2, L3 & Integer; categorical & IDs of listeners 1--3 assigned by transcription program (not sequential) & 66 total listeners across 22 groups; columns F--H; \\[1em]
+L\_Group & 1--22; categorical & Listener group assignment (3 listeners per group, 5--6 children per group) & $\geq$2 children with clefts per group; column I\\[1em]
+L1\_L2, L1\_L3, L2\_L3 & 0--100 (\%); continuous & Absolute pairwise differences in SWI scores between each pair of listeners & Listener 74 data for participant 30310 discarded due to audio playback error in transcription program; columns N--P \\[1em]
+L\_Avg & 0--100 (\%); continuous & Mean of absolute pairwise listener differences (L1\_L2, L1\_L3, L2\_L3) & Inter-listener agreement check; values $>$10\% flagged and highlighted in Excel;  column Q \\
+\bottomrule
+\end{tabular}
+% ── PRELIMINARY ANALYSIS ───────────────────────────────────────────
+\section*{PRELIMINARY ANALYSIS}\label{sec:prelim}
+\subsection*{Key decisions}\label{sec:prelim-decisions}
+
+\begin{enumerate}
+
+    \item \textbf{TD vs.\ OM comparability.} Prior to primary analysis, test whether the typically developing (TD, cohort 3) and otitis media (OM, cohort 4) groups differ on the primary outcome (M\_SWI). Use an independent-samples $t$-test (or Wilcoxon rank-sum if normality is not met). If no statistically significant differences are found (and effect sizes are negligible), the two groups will be merged into a single control group for the primary analysis. Document this decision and retain the original cohort coding as a sensitivity check. In terms of whether this accounts for alpha-spending, TBD. 
+
+    \item \textbf{Inter-rater agreement by listener group.} Assess agreement among the three listeners within each of the 22 listener groups using intraclass correlation coefficient (ICC, two-way mixed model, absolute agreement). Flag listener groups where CC falls below $<$ 0.5, indicating poor agreement (see REFERENCES). Results will inform:
+    \begin{itemize}
+        \item Whether individual listener scores (L1\_SWI, L2\_SWI, L3\_SWI) exhibit meaningful clustering within listener groups, motivating the use of a linear mixed model in the primary analysis.
+        \item Identification of listener groups with low agreement for the sensitivity analysis (see Sensitivity Analysis, item 2).
+    \end{itemize}
+    \textit{Note:} Listener 74 data for participant 30310 have already been discarded due to an audio playback error in the transcription program.
+
+\end{enumerate}
+
+% ── PRIMARY ANALYSIS ───────────────────────────────────────────
+\section*{PRIMARY ANALYSIS}\label{sec:primary}
+\subsection*{Key decisions}\label{sec:primary-decisions}
+
+\textbf{Linear mixed model (LMM).} Fit an LMM using \textit{individual listener SWI scores} (L1\_SWI, L2\_SWI, L3\_SWI; long format, one row per listener per child) as the outcome. Fixed effects: cohort, sex, age, VP status. We will also consider pairwise interactions between the fixed effects. Random effects: listener nested within listener group (i.e., random intercept for listener group, with listener as the unit of replication within group). Use REML estimation. 
+
+\subsection*{Missing Data}\label{sec:missing}
+The full analytic sample of N=115 is retained; no participants are excluded. 
+The only data anomaly is that responses from Listener 74 for participant 30310 
+were discarded prior to data receipt due to an audio playback error in the 
+transcription program. 
+
+
+\subsection*{Significance level / Multiple Comparisons}\label{sec:significance}
+
+Depending on the results of the preliminary analysis, we will conduct either two or three planned pairwise contrasts against the CLP group, extracted after fitting the LMM. If TD and OM are merged into a single control group, two contrasts will be tested (CLP vs.\ CP; CLP vs.\ control). If TD and OM are retained as separate cohorts, three contrasts will be tested (CLP vs.\ CP; CLP vs.\ TD; CLP vs.\ OM).  \\
+
+\noindent We will use the weighted Bonferroni-Holm procedure to adjust for multiplicity. The initial allocation of significance to the individual hypothesis is $\alpha/m$, where $m$ is the number of primary hypothesis. Suppose we have three hypothesis $H_1, H_2, H_3$. If $H_1$ is rejected at $\alpha/m$, then the associated significance is split equally and passed on to the remaining (not yet rejected) hypothesis $H_2$ and $H_3$. This will continue until all the remaining $\alpha$ is allocated. \\ 
+
+\noindent Multiplicity is controlled separately within the primary and secondary analyses rather than jointly across both. This decision is justified by the conceptual distinction between the two sets of hypotheses: the primary analysis targets overall speech intelligibility (individual listener scores), 
+while the secondary analysis targets contrast-specific intelligibility scores 
+(alv\_pal through vd\_vl), which represent distinct research questions. 
+
+\subsection*{Sensitivity Analysis}\label{sec:sensitivity}
+
+\begin{enumerate}
+
+    \item \textbf{Simpler random effects.} Compare the primary LMM with a LMM with random effects only for the listener group. Use likelihood ratio test if the difference in the log-likelihood and use a 50-50 mixture of a $\chi^2_1$ and a $\chi^2_2$ distribution to obtain the critical value.  
+
+    \item \textbf{Exclude participants with inadequate VP closure.} Rerun the LMM model excluding the 7 participants with VP status $= 2$ (inadequate; $>5$\,mm$^2$): 6 from the CLP cohort and 1 from the CP cohort. Compare estimates and standard errors to the main analysis to assess the influence of velopharyngeal inadequacy on the cohort effect.
+
+    \item \textbf{Ordinary linear regression (OLS).} Regress M\_SWI (mean intelligibility score across three listeners) on cohort (reference = control group, per preliminary analysis decision above), sex, age, and VP status. Assess potential two-way interactions (e.g., cohort $\times$ age, cohort $\times$ VP status) based on preliminary data inspection.
+
+\end{enumerate}
+
+% ── SECONDARY ANALYSIS ─────────────────────────────────────────
+\section*{SECONDARY ANALYSIS}\label{sec:secondary}
+\subsection*{Key decisions}\label{sec:secondary-decisions}
+
+\textbf{Contrast-specific intelligibility by cohort.} For each of the 11 phonetic contrast scores listed below, fit a separate OLS linear regression with the contrast score as the outcome and the same fixed effects (and interaction terms) as the primary model (cohort, sex, age, VP status). The number of cohorts (3 or 4) follows the decision made in the preliminary analysis regarding merging of the TD and OM groups.
+
+    \begin{center}
+    \begin{tabular}{ll}
+    \toprule
+    \textbf{Variable} & \textbf{Contrast} \\
+    \midrule
+    alv\_pal     & Alveolar-palatal sibilant (e.g., \textit{see--she}) \\
+    alv\_velar   & Alveolar-velar stop (e.g., \textit{tap--cap}) \\
+    cl\_sing     & Cluster-singleton (e.g., \textit{stop--top}) \\
+    con\_null    & Initial consonant-null (e.g., \textit{pat--at}) \\
+    fr\_bk       & Front-back vowel (e.g., \textit{fill--full}) \\
+    fric\_affr   & Fricative-affricate (e.g., \textit{ship--chip}) \\
+    hi\_lo       & High-low vowel (e.g., \textit{beat--bit}) \\
+    r\_w         & Liquid-glide (e.g., \textit{ray--way}) \\
+    st\_fric-affr & Stop-fricative/affricate (e.g., \textit{base--vase}) \\
+    st\_nas      & Stop-nasal (e.g., \textit{bop--mop}) \\
+    vd\_vl       & Voiced-voiceless stop (e.g., \textit{big--pig}) \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \textit{Note:} Each contrast score is already averaged across the three listeners 
+    (analogous to M\_SWI), so the OLS model is appropriate. 
+
+
+\subsection*{Significance level / Multiple Comparisons}\label{sec:secondary-significance}
+As stated above, no gatekeeping approach is applied between the primary and 
+secondary analyses. Within the secondary analysis, however, we apply a 
+gatekeeping structure across two families of hypotheses. \\ 
+
+\noindent \textbf{Family 1 (CLP vs.\ control):} For each of the 11 phonetic contrasts, 
+test whether the CLP cohort differs from the control group. The 11 
+$p$-values are adjusted using the Hochberg step-up procedure at two-sided 
+$\alpha = 0.05$. The Hochberg procedure is appropriate because children who 
+score highly on one contrast are expected to score highly on others, inducing 
+positive dependence among the test statistics. \\ 
+
+\noindent \textbf{Family 2 (CLP vs.\ CP):} Only contrasts for which Family 1 was 
+rejected proceed to Family 2 testing. For those contrasts, we test whether 
+the CLP cohort additionally differs from the CP cohort, again using the 
+Hochberg step-up procedure at $\alpha = 0.05$ applied to the reduced set of 
+hypotheses. Contrasts not rejected in Family 1 are not tested in Family 2. \\ 
+
+\noindent This gatekeeping structure reflects the natural scientific hierarchy of the research questions: we first identify which phonetic contrasts distinguish CLP from typical speech, then ask whether those same contrasts also differentiate CLP from another clinical group (CP). Note that this approach cannot detect contrasts where CLP differs from CP but not from the control group.
+
+\end{document}
