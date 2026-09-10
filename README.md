@@ -41,9 +41,9 @@ Exploratory visualizations included boxplots of mean intelligibility scores by g
 
 ## Repository Contents
 
-- `docs/project_description.pdf`: project background and planned research questions
-- `docs/statistical_analysis_plan.pdf`: planned statistical analysis approach
-- `docs/final_report.pdf`: final written report
+- `report/project_description.pdf`: project background and planned research questions
+- `report/statistical_analysis_plan.pdf`: planned statistical analysis approach
+- `report/final_report.pdf`: final written report
 - `presentation/final_presentation.pdf`: summary slides
 - `code/final_analysis_code.R`: analysis code
 - `data/DATA_NOT_INCLUDED.md`: explanation of data restrictions
