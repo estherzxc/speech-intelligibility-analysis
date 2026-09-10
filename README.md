@@ -41,12 +41,15 @@ Exploratory visualizations included boxplots of mean intelligibility scores by g
 
 ## Repository Contents
 
-- `report/project_description.pdf`: project background and planned research questions
-- `report/statistical_analysis_plan.pdf`: planned statistical analysis approach
-- `report/final_report.pdf`: final written report
-- `presentation/final_presentation.pdf`: summary slides
-- `code/final_analysis_code.R`: analysis code
-- `data/DATA_NOT_INCLUDED.md`: explanation of data restrictions
+* [`code/final_analysis_code.qmd`](code/final_analysis_code.qmd): complete analysis code and documentation
+* [`code/final_analysis_code.pdf`](code/final_analysis_code.pdf): rendered version of the analysis
+* [`report/statistical_analysis_plan.pdf`](report/statistical_analysis_plan.pdf): prespecified statistical analysis approach
+* [`report/final_report.pdf`](report/final_report.pdf): final written report and results
+* [`presentation/final_presentation.pdf`](presentation/final_presentation.pdf): presentation summarizing the project
+* [`data/DATA_NOT_INCLUDED.md`](data/DATA_NOT_INCLUDED.md): explanation of data availability and restrictions
+
+LaTeX source files used to produce the report and presentation are included alongside their corresponding PDF files.
+
 
 ## Data Availability
 
